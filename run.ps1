@@ -409,10 +409,25 @@ function CallLang($clg) {
 
     $ProgressPreference = 'SilentlyContinue'
 
+    # Try local file first
+    $localPath = Join-Path $PSScriptRoot "scripts\installer-lang\$clg.ps1"
+    if (Test-Path -LiteralPath $localPath) {
+        try {
+            $response = Get-Content -LiteralPath $localPath -Raw -Encoding UTF8
+            return Invoke-Expression $response
+        }
+        catch {
+            Write-Host "Error loading $clg language"
+            if (-not $no_pause) { Pause }
+            Exit
+        }
+    }
+
+    # Fall back to remote download
     try {
         $response = (iwr -Uri (Get-Link -e "/scripts/installer-lang/$clg.ps1") -UseBasicParsing).Content
         if ($mirror) { $response = [System.Text.Encoding]::UTF8.GetString($response) }
-        Invoke-Expression $response
+        return Invoke-Expression $response
     }
     catch {
         Write-Host "Error loading $clg language"
