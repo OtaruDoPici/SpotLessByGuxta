@@ -1,7 +1,7 @@
-[PSCustomObject]@{
+﻿[PSCustomObject]@{
     Welcome         = "
 ╔══════════════════════════════════════╗
-║ Ласкаво просимо до SpotX для Windows ║
+║ Ласкаво просимо до SpotLessByGuxta для Windows ║
 ╚══════════════════════════════════════╝"
     Incorrect       = "Упс, некоректне значення,"
     Incorrect2      = "введіть знову через "
@@ -35,8 +35,8 @@
     ModSpoti        = "Встановлення патчів на Spotify..."
     Error           = "Помилка"
     FileLocBroken   = "Помилки у шляху до файлів Spotify, видаліть клієнт та запустіть скрипт ще раз."
-    Spicetify       = "Spicetify detected, it must be installed after SpotX, open recommended actions in FAQ ? [Y/N]"
-    NoRestore       = "SpotX вже встановлено, але файл xpui.bak не знайдено. `nБудь-ласка, видаліть клієнт Spotify та запустіть скрипт ще раз."
+    Spicetify       = "Spicetify detected, it must be installed after SpotLessByGuxta, open recommended actions in FAQ ? [Y/N]"
+    NoRestore       = "SpotLessByGuxta вже встановлено, але файл xpui.bak не знайдено. `nБудь-ласка, видаліть клієнт Spotify та запустіть скрипт ще раз."
     InstallComplete = "встановлення завершене"
     HostInfo        = "Небажані посилання знайдені у файлі hosts"
     HostBak         = "Бекап hosts.bak..."

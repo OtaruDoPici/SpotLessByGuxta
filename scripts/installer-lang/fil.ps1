@@ -1,7 +1,7 @@
-[PSCustomObject]@{
+﻿[PSCustomObject]@{
     Welcome         = "
 ╔═══════════════════════════════════════════════╗
-║ Maligayang pagdating sa SpotX para sa Windows ║
+║ Maligayang pagdating sa SpotLessByGuxta para sa Windows ║
 ╚═══════════════════════════════════════════════╝"
     Incorrect       = "Oops, maling halaga,"
     Incorrect2      = "subukang muli sa pamamagitan ng "
@@ -35,8 +35,8 @@
     ModSpoti        = "Pinapatch ang Spotify..."
     Error           = "May nangyaring mali"
     FileLocBroken   = "Ang lokasyon ng mga file ng Spotify ay sira, mag-uninstall ng Spotify client at patakbuhin muli ang script."
-    Spicetify       = "Nakadetect ang Spicetify, ito ay dapat na mai-install pagkatapos ng SpotX, buksan ang rekomendadong mga hakbang sa FAQ? [Y/N]"
-    NoRestore       = "Nakainstall na ang SpotX, hindi nakita ang xpui.bak. `nMangyaring mag-uninstall ng Spotify client at patakbuhin muli ang Install.bat"
+    Spicetify       = "Nakadetect ang Spicetify, ito ay dapat na mai-install pagkatapos ng SpotLessByGuxta, buksan ang rekomendadong mga hakbang sa FAQ? [Y/N]"
+    NoRestore       = "Nakainstall na ang SpotLessByGuxta, hindi nakita ang xpui.bak. `nMangyaring mag-uninstall ng Spotify client at patakbuhin muli ang Install.bat"
     InstallComplete = "Ang pag-install ay tapos na"
     HostInfo        = "May mga hindi kinakailangang mga URL ay natagpuan sa hosts file"
     HostBak         = "Nagbabackup ng hosts.bak..."

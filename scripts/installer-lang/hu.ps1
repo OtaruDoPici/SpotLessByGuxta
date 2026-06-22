@@ -1,7 +1,7 @@
-[PSCustomObject]@{
+﻿[PSCustomObject]@{
     Welcome         = "
 ╔════════════════════════════════════════════╗
-║ Üdvözöllek a SpotX Windowsos telepítőjében ║
+║ Üdvözöllek a SpotLessByGuxta Windowsos telepítőjében ║
 ╚════════════════════════════════════════════╝"
     Incorrect       = "Hoppá, helytelen érték,"
     Incorrect2      = "Próbáld újra "
@@ -35,8 +35,8 @@
     ModSpoti        = "Spotify patchelése..."
     Error           = "Hiba"
     FileLocBroken   = "A Spotify fájlok sérültek, távolítsa el a klienst, és futtassa újra a szkriptet."
-    Spicetify       = "Spicetify detected, it must be installed after SpotX, open recommended actions in FAQ ? [Y/N]"
-    NoRestore       = "A SpotX már telepítve van, az xpui.bak nem található. `nTávolítsa el a Spotify klienst, és futtassa újra az Install.bat fájlt."
+    Spicetify       = "Spicetify detected, it must be installed after SpotLessByGuxta, open recommended actions in FAQ ? [Y/N]"
+    NoRestore       = "A SpotLessByGuxta már telepítve van, az xpui.bak nem található. `nTávolítsa el a Spotify klienst, és futtassa újra az Install.bat fájlt."
     InstallComplete = "Telepítés befejeződött"
     HostInfo        = "Nemkívánatos URL-címek a hosts fájlban"
     HostBak         = "A hosts.bak mentése..."

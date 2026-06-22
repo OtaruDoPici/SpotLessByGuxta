@@ -1,7 +1,7 @@
-[PSCustomObject]@{
+﻿[PSCustomObject]@{
     Welcome         = "
 ╔════════════════════════════════╗
-║ Windows SpotXக்கு வரவேற்கிறோம் ║
+║ Windows SpotLessByGuxtaக்கு வரவேற்கிறோம் ║
 ╚════════════════════════════════╝"
     Incorrect       = "அச்சச்சோ, தவறான மதிப்பு,"
     Incorrect2      = "மீண்டும் உள்ளிடவும்"
@@ -35,8 +35,8 @@
     ModSpoti        = "Spotifyயை Patch செய்யப்படுகிறது..."
     Error           = "பிழை"
     FileLocBroken   = "Spotify கோப்புகளின் இருப்பிடம் மாறிவிட்டது, Spotify clientயை நிறுவல் நீக்கி Scriptயை மீண்டும் இயக்கவும்"
-    Spicetify       = "Spicetify கண்டறியப்பட்டது, இது SpotX க்குப் பிறகு நிறுவப்பட வேண்டும், FAQ இல் பரிந்துரைக்கப்பட்ட செயல்களைத் திறக்க விரும்புகிறீர்களா? [Y/N]"
-    NoRestore       = "SpotX ஏற்கனவே நிறுவப்பட்டது, xpui.bak காணப்படவில்லை. 'nதயவுசெய்து Spotify clientயை நிறுவல் நீக்கி Install.batயை மீண்டும் இயக்கவும்"
+    Spicetify       = "Spicetify கண்டறியப்பட்டது, இது SpotLessByGuxta க்குப் பிறகு நிறுவப்பட வேண்டும், FAQ இல் பரிந்துரைக்கப்பட்ட செயல்களைத் திறக்க விரும்புகிறீர்களா? [Y/N]"
+    NoRestore       = "SpotLessByGuxta ஏற்கனவே நிறுவப்பட்டது, xpui.bak காணப்படவில்லை. 'nதயவுசெய்து Spotify clientயை நிறுவல் நீக்கி Install.batயை மீண்டும் இயக்கவும்"
     InstallComplete = "நிறுவல் முடிந்தது"
     HostInfo        = "Host filesல் தேவையற்ற URL கள் கண்டறியப்படுகின்றன"
     HostBak         = "hosts.bak காப்புப்பிரதி..."

@@ -1740,7 +1740,7 @@ if (-not $SpotifyPath -and (-not $spotifyInstalled -or $upgrade_client)) {
     Get-ChildItem $spotifyDirectory -Exclude 'Users', 'prefs' | Remove-Item -Recurse -Force
     Start-Sleep -Milliseconds 200
 
-    $tempDirName = "SpotX_Temp-$(Get-Date -UFormat '%Y-%m-%d_%H-%M-%S')"
+    $tempDirName = "SpotLess_Temp-$(Get-Date -UFormat '%Y-%m-%d_%H-%M-%S')"
     $tempDirectory = Join-Path ([System.IO.Path]::GetTempPath()) $tempDirName
     if (-not (Test-Path -LiteralPath $tempDirectory)) { New-Item -ItemType Directory -Path $tempDirectory | Out-Null }
 
@@ -2423,7 +2423,7 @@ function extract ($counts, $method, $name, $helper, $add, $patch) {
                 Add-Type -Assembly 'System.IO.Compression.FileSystem'
                 $xpui_spa_patch = Join-Path (Join-Path $spotifyDirectory 'Apps') 'xpui.spa'
                 $zip = [System.IO.Compression.ZipFile]::Open($xpui_spa_patch, 'update')
-                $entries = @($zip.Entries | Where-Object { $_.FullName -like $name -and $_.FullName.Split('/') -notcontains 'spotx-helper' })
+                $entries = @($zip.Entries | Where-Object { $_.FullName -like $name -and $_.FullName.Split('/') -notcontains 'guxta-helper' })
 
                 foreach ($entry in $entries) {
                     $reader = New-Object System.IO.StreamReader($entry.Open())
@@ -3014,7 +3014,7 @@ if ($test_js) {
     while ($ch -notmatch '^y$|^n$')
 
     if ($ch -eq 'y') {
-        $Url = "https://telegra.ph/SpotX-FAQ-09-19#Can-I-use-SpotX-and-Spicetify-together?"
+        $Url = "https://github.com/OtaruDoPici/SpotLessByGuxta"
         Start-Process $Url
     }
 
@@ -3104,7 +3104,7 @@ if ($test_spa) {
         if ($null -eq $entry) { throw "Archive entry not found: xpui.js" }
 
         $reader = New-Object System.IO.StreamReader($entry.Open())
-        $patched_by_spotx = $reader.ReadToEnd()
+        $patched_content = $reader.ReadToEnd()
     }
     catch {
         Stop-BrokenSpotifyFiles -Details "Error: $($_.Exception.Message)"
@@ -3125,7 +3125,7 @@ if ($test_spa) {
         $spotify_binary = $spotifyExecutable
     }
 
-    If ($patched_by_spotx -match 'patched by spotx') {
+    If ($patched_content -match 'patched by spotlessbyguxta') {
         if ($test_bak_spa) {
             Remove-Item $xpui_spa_patch -Recurse -Force
             Rename-Item $bak_spa $xpui_spa_patch
@@ -3142,7 +3142,7 @@ if ($test_spa) {
                 }
                 else {
                     $binary_exe_bak = [System.IO.Path]::GetFileName($exe_bak)
-                    Write-Warning ("Backup copy {0} not found. Please reinstall Spotify and run SpotX again" -f $binary_exe_bak)
+                    Write-Warning ("Backup {0} nao encontrado. Reinstale o Spotify e execute o script novamente" -f $binary_exe_bak)
                     if (-not $no_pause) { Pause }
                     Exit
                 }
@@ -3153,7 +3153,7 @@ if ($test_spa) {
                 }
                 else {
                     $binary_chrome_elf_bak = [System.IO.Path]::GetFileName($chrome_elf_bak)
-                    Write-Warning ("Backup copy {0} not found. Please reinstall Spotify and run SpotX again" -f $binary_chrome_elf_bak)
+                    Write-Warning ("Backup {0} nao encontrado. Reinstale o Spotify e execute o script novamente" -f $binary_chrome_elf_bak)
                     if (-not $no_pause) { Pause }
                     Exit
                 }
@@ -3203,7 +3203,7 @@ if ($test_spa) {
     }
 
     # Forced exp
-    extract -counts 'one' -method 'zip' -name 'xpui.js' -helper 'ForcedExp' -add $webjson.others.byspotx.add
+    extract -counts 'one' -method 'zip' -name 'xpui.js' -helper 'ForcedExp' -add $webjson.others.byguxta.add
 
     # Hiding Ad-like sections or turn off podcasts from the homepage
     if ($podcast_off -or $adsections_off -or $canvashome_off) {
@@ -3225,7 +3225,7 @@ if ($test_spa) {
 
             if (!($calltype -eq "'canvas'" -and [version]$offline -le [version]"1.2.44.405")) {
                 $section = $section -replace "sectionBlock\(data, ''\)", "sectionBlock(data, $calltype)"
-                injection -p $xpui_spa_patch -f "spotx-helper" -n "sectionBlock.js" -c $section
+                injection -p $xpui_spa_patch -f "guxta-helper" -n "sectionBlock.js" -c $section
             }
         }
 
@@ -3238,7 +3238,7 @@ if ($test_spa) {
 
         if ($goofy -ne $null) {
 
-            injection -p $xpui_spa_patch -f "spotx-helper" -n "goofyHistory.js" -c $goofy
+            injection -p $xpui_spa_patch -f "guxta-helper" -n "goofyHistory.js" -c $goofy
         }
     }
 
@@ -3254,7 +3254,7 @@ if ($test_spa) {
         $colorsContent = $colorsContent -replace '{{background}}', "$($webjson.others.themelyrics.theme.$lyrics_stat.background)"
         $colorsContent = $colorsContent -replace '{{musixmatch}}', "$($webjson.others.themelyrics.theme.$lyrics_stat.maxmatch)"
 
-        injection -p $xpui_spa_patch -f "spotx-helper/lyrics-color" -n @("rules.css", "colors.css") -c @($rulesContent, $colorsContent) -i "rules.css"
+        injection -p $xpui_spa_patch -f "guxta-helper/lyrics-color" -n @("rules.css", "colors.css") -c @($rulesContent, $colorsContent) -i "rules.css"
 
     }
     extract -counts 'one' -method 'zip' -name 'home-v2.js' -helper 'HomeV2-js'
@@ -3398,7 +3398,7 @@ if ($regex1 -and $regex2 -and $regex3 -and $regex4 -and $regex5) {
 
 if (-not (Test-Path -LiteralPath $spotify_binary_bak)) {
     $name_binary = [System.IO.Path]::GetFileName($spotify_binary_bak)
-    Write-Warning ("Backup copy {0} not found. Please reinstall Spotify and run SpotX again" -f $name_binary)
+    Write-Warning ("Backup {0} nao encontrado. Reinstale o Spotify e execute o script novamente" -f $name_binary)
     if (-not $no_pause) { Pause }
     Exit
 }

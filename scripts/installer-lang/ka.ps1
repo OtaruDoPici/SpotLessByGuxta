@@ -1,7 +1,7 @@
-[PSCustomObject]@{
+﻿[PSCustomObject]@{
     Welcome         = "
 ╔══════════════════════════════╗
-║ Welcome to SpotX for Windows ║
+║ Welcome to SpotLessByGuxta for Windows ║
 ╚══════════════════════════════╝"
     Incorrect       = "უპს, არასწორი შენატანი,"
     Incorrect2      = "მაგრამ თავიდან სცადე"
@@ -35,8 +35,8 @@
     ModSpoti        = "Spotify იკერვება..."
     Error           = "შეცდომა"
     FileLocBroken   = "Spotify ფაილების ლოკაცია არის გადეხილი, წაშალეთ კლიენტი და თავიდან გაუშვით სკრიპტი"
-    Spicetify       = "Spicetify detected, it must be installed after SpotX, open recommended actions in FAQ ? [Y/N]"
-    NoRestore       = "SpotX უკვე დაინსტალირებულია, xpui.bak ვერ მოიძებნა. `nგთხოვთ, წაშალოთ Spotify აპლიკაცია და თავიდან გაუშვით Install.bat"
+    Spicetify       = "Spicetify detected, it must be installed after SpotLessByGuxta, open recommended actions in FAQ ? [Y/N]"
+    NoRestore       = "SpotLessByGuxta უკვე დაინსტალირებულია, xpui.bak ვერ მოიძებნა. `nგთხოვთ, წაშალოთ Spotify აპლიკაცია და თავიდან გაუშვით Install.bat"
     InstallComplete = "ინსტალაცია დასრულდა"
     HostInfo        = "არასასურველი URL-ები ნაპოვნი მასპინძელის ფაილში"
     HostBak         = "იქმნება hosts.bak-ის სარევეზნო ასლი..."
