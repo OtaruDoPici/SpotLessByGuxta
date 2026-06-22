@@ -409,17 +409,19 @@ function CallLang($clg) {
 
     $ProgressPreference = 'SilentlyContinue'
 
-    # Try local file first
-    $localPath = Join-Path $PSScriptRoot "scripts\installer-lang\$clg.ps1"
-    if (Test-Path -LiteralPath $localPath) {
-        try {
-            $response = Get-Content -LiteralPath $localPath -Raw -Encoding UTF8
-            return Invoke-Expression $response
-        }
-        catch {
-            Write-Host "Error loading $clg language"
-            if (-not $no_pause) { Pause }
-            Exit
+    # Try local file first (only when running from a file, not via iex)
+    if ($PSScriptRoot) {
+        $localPath = Join-Path $PSScriptRoot "scripts\installer-lang\$clg.ps1"
+        if (Test-Path -LiteralPath $localPath) {
+            try {
+                $response = Get-Content -LiteralPath $localPath -Raw -Encoding UTF8
+                return Invoke-Expression $response
+            }
+            catch {
+                Write-Host "Error loading $clg language"
+                if (-not $no_pause) { Pause }
+                Exit
+            }
         }
     }
 
